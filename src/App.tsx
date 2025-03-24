@@ -2,11 +2,12 @@ import { Download, Smartphone, Pencil, NotebookIcon } from 'lucide-react';
 
 function App() {
 
-  const handleDownload = () => {
-
-    const fileUrl = 'https://drive.google.com/uc?export=download&id=1MHylnE4nIZKOx9R_Oy5G39yT8mjmbZPm'; 
-    const fileName = 'Mural Virtual.apk';
-
+  const handleDownload = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault(); 
+    
+    const fileUrl = '/Mural Virtual.rar'; 
+    const fileName = 'Mural Virtual.rar'; 
+  
     const link = document.createElement('a');
     link.href = fileUrl;
     link.download = fileName;
@@ -14,6 +15,7 @@ function App() {
     link.click();
     document.body.removeChild(link);
   };
+  
 
   return (
     <div className="min-h-screen bg-[#ffffff]">
